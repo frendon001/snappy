@@ -1,3 +1,6 @@
+const _ = require('lodash');
+const Path = require('path-parser').default;
+const { URL } = require('url');
 const mongoose = require('mongoose');
 const requireLogin = require('../middlewares/requireLogin');
 const requireCredits = require('../middlewares/requireCredits');
@@ -7,9 +10,34 @@ const surveyTemplate = require('../services/emailTemplates/surveyTemplate');
 const Survey = mongoose.model('surveys');
 
 module.exports = app => {
+  //response to survey taker after answering question
   app.get('/api/surveys/thanks', (req, res) => {
     res.send('Thank you for your feedback!');
   });
+
+  //receive data from sendgrid and update database with survey answers
+  app.post('/api/surveys/webhooks', (req, res) => {
+    const surveyPath = new Path('/api/surveys/:surveyId/:choice');
+    //obtain valid survey answers
+    const events = _.chain(req.body)
+      .map(({ email, url }) => {
+        const matchPath = surveyPath.test(new URL(url).pathname);
+        if (matchPath) {
+          return {
+            email,
+            surveyId: matchPath.surveyId,
+            choice: matchPath.choice
+          };
+        }
+      })
+      .compact()
+      .uniqBy('email', 'surveyId')
+      .value();
+
+    console.log(events);
+    res.send({});
+  });
+
   //create surveys and send out emails
   app.post('/api/surveys', requireLogin, requireCredits, async (req, res) => {
     const { title, subject, body, recipients } = req.body;
