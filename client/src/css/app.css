@@ -6,3 +6,40 @@
   background-color: #fafafa !important;
   height: 100vh;
 }
+
+.section-margin {
+  margin-top: 7rem;
+}
+.section-padding {
+  padding-top: 7rem;
+}
+
+.landing-section {
+  height: 35vh;
+  min-height: 300px;
+}
+
+.large-text {
+  font-size: 1.5rem;
+}
+
+.medium-text {
+  font-size: 1.25rem;
+}
+
+.container .row {
+  margin-right: 0px;
+  margin-left: 0px;
+  margin-bottom: 0px;
+}
+
+.row:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.features-item {
+  padding: 0 20px 0 20px;
+  margin-bottom: 5rem;
+}
