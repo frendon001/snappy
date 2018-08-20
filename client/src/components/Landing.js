@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const backgroundTopStyle = {
   background: 'url(assets/images/welcome.png)',
@@ -12,9 +13,17 @@ const backgroundTopStyle = {
   backgroundRepeat: 'no-repeat'
 };
 
+const backgroundChartStyle = {
+  background: 'url(assets/images/snappy_chart.jpeg)',
+  height: '100%',
+  backgroundSize: 'cover',
+  backgroundPosition: 'center center',
+  backgroundRepeat: 'no-repeat'
+};
+
 const Landing = () => {
   return (
-    <div style={{ textAlign: 'center' }}>
+    <div className="center-align">
       {/* Top Message */}
       <div className="row" style={backgroundTopStyle}>
         <div className="col s12 white-text">
@@ -27,7 +36,7 @@ const Landing = () => {
       </div>
       {/* Features */}
 
-      <div className="row section-padding s4 blue-grey lighten-5">
+      <div className="row top-section-padding s4 blue-grey lighten-5">
         <div className="col s12 m4">
           <i className="medium material-icons orange-text text-lighten-1">
             credit_card
@@ -70,13 +79,74 @@ const Landing = () => {
         />
       </div>
       {/* Contact */}
-      <div className="row blue-grey darken-1 grey-text text-lighten-5 landing-section valign-wrapper">
-        <div className="col s12">
-          <h3>{"We're here for you. Let's talk!"}</h3>
-          <h5> 1(800)555-5555 </h5>
-          <p>
-            Partner with the survey service trusted by smal business owners and
-            marketers for time-savings, scalability, and delivery expertise.
+      <div className="row blue-grey darken-1 grey-text text-lighten-5 landing-section flex-align-wrapper">
+        <div className="col s12 l6 align-center">
+          <h4 className="bottom-s-padding">Optimize Your Survey Services</h4>
+          <h5 className="left-align bottom-s-padding side-margin">
+            We will help ensure your program is optimized:
+          </h5>
+
+          <p className="left-align p-text">
+            Continuously monitor responses in your Dashboard.
+          </p>
+          <div class="divider side-margin" />
+          <p className="left-align p-text">
+            Evaluate the revelevance of existing survey programs. Remove and add
+            new surveys as needed.
+          </p>
+          <div class="divider side-margin" />
+          <p className="left-align p-text">
+            Ensure your account is setup properly with our Email Program Setup
+            package, available for new senders and OEM/Cloud Platform Partners
+          </p>
+        </div>
+        <div
+          className="col s12 l6 align-end col-background-img"
+          style={backgroundChartStyle}
+        />
+      </div>
+      {/* Additional informaton */}
+      <div className="row snappy-dark-blue grey-text text-lighten-5 landing-section flex-align-wrapper">
+        <div className="col s1 m2 l3" />
+        <div className="col s4 m3 l2 left-align top-s-margin">
+          <h5>Solutions</h5>
+          <ul>
+            <li className="landing-list">
+              <Link to="/">Pricing</Link>
+            </li>
+            <li className="landing-list">
+              <Link to="/">Email Delivery</Link>
+            </li>
+            <li className="landing-list">
+              <Link to="/">Dashboard</Link>
+            </li>
+            <li className="landing-list">
+              <Link to="/">Create Surveys</Link>
+            </li>
+          </ul>
+        </div>
+        <div className="col s4 m3 l2 left-align top-s-margin">
+          <h5>Company</h5>
+          <ul>
+            <li className="landing-list">
+              <Link to="/">Contact Support</Link>
+            </li>
+            <li className="landing-list">
+              <Link to="/">About</Link>
+            </li>
+            <li className="landing-list">
+              <Link to="/">Our Team</Link>
+            </li>
+            <li className="landing-list">
+              <Link to="/">Contact us</Link>
+            </li>
+          </ul>
+        </div>
+        <div className="col s1 m2 l3" />
+        <div className="col s12 align-end">
+          <h4 className="section-margin">Snappy</h4>
+          <p className="light-font">
+            Copyright © {new Date().getFullYear()}. Snappy All rights reserved.
           </p>
         </div>
       </div>
