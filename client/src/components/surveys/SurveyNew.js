@@ -24,7 +24,11 @@ class SurveyNew extends Component {
   }
 
   render() {
-    return <div>{this.renderContent()}</div>;
+    return (
+      <div className="full-height top-s-margin bottom-m-margin">
+        {this.renderContent()}
+      </div>
+    );
   }
 }
 

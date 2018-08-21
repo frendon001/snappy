@@ -7,7 +7,6 @@ const backgroundTopStyle = {
   width: '100%',
   minHeight: '300px',
   maxHeight: '600px',
-  minWidth: '360px',
   backgroundSize: 'cover',
   backgroundPosition: 'center center',
   backgroundRepeat: 'no-repeat'
@@ -15,7 +14,6 @@ const backgroundTopStyle = {
 
 const backgroundChartStyle = {
   background: 'url(assets/images/snappy_chart.jpeg)',
-  height: '100%',
   backgroundSize: 'cover',
   backgroundPosition: 'center center',
   backgroundRepeat: 'no-repeat'
@@ -78,7 +76,7 @@ const Landing = () => {
           alt="workbench"
         />
       </div>
-      {/* Contact */}
+      {/* Optimization */}
       <div className="row blue-grey darken-1 grey-text text-lighten-5 landing-section flex-align-wrapper">
         <div className="col s12 l6 align-center">
           <h4 className="bottom-s-padding">Optimize Your Survey Services</h4>

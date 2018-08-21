@@ -30,7 +30,7 @@ class SurveyList extends Component {
 
   render() {
     return (
-      <div className="row">
+      <div className="row top-s-margin">
         <div className="col s12 m12">{this.renderSurvey()} </div>
       </div>
     );

@@ -24,16 +24,22 @@ class SurveyForm extends Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.props.handleSubmit(this.props.onSurveySubmit)}>
+      <div className="row">
+        <div className="col s0 m1 l2 " />
+        <form
+          onSubmit={this.props.handleSubmit(this.props.onSurveySubmit)}
+          className="col s12 m10 l8"
+        >
           {this.renderFields()}
-          <Link to="/surveys" className="red btn-flat white-text">
-            Cancel
-          </Link>
-          <button type="submit" className="teal btn-flat right white-text">
-            Next
-            <i className="material-icons right ">done</i>
-          </button>
+          <div className="row top-s-padding">
+            <Link to="/surveys" className="red btn-flat white-text">
+              Cancel
+            </Link>
+            <button type="submit" className="teal btn-flat right white-text">
+              Next
+              <i className="material-icons right ">done</i>
+            </button>
+          </div>
         </form>
       </div>
     );
