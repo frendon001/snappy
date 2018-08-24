@@ -8,7 +8,7 @@ class Payments extends Component {
     return (
       <StripeCheckout
         name="Snappy"
-        description="$5 for 5 Snappy Credits"
+        description="Credit Card:'4242 4242 4242 4242'"
         amount={500}
         token={token => this.props.handleToken(token)}
         stripeKey={process.env.REACT_APP_STRIPE_KEY}

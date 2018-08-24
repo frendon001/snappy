@@ -27,19 +27,17 @@ class Landing extends Component {
         return;
       case false:
         return (
-          <button className="btn teal accent-4 white-text">
-            <a href="/auth/google" className="white-text">
-              Sign in
-            </a>
-          </button>
+          <a href="/auth/google" className="white-text">
+            <button className="btn teal accent-4 white-text">Sign in</button>
+          </a>
         );
       default:
         return (
-          <button className="btn teal accent-4 white-text">
-            <Link to="/surveys" className="white-text">
+          <Link to="/surveys" className="white-text">
+            <button className="btn teal accent-4 white-text">
               Go to Dashboard
-            </Link>
-          </button>
+            </button>
+          </Link>
         );
     }
   }
@@ -59,7 +57,6 @@ class Landing extends Component {
           <div className="col s12 white-text">{this.renderButton()}</div>
         </div>
         {/* Features */}
-
         <div className="row top-section-padding s4 blue-grey lighten-5">
           <div className="col s12 m4">
             <i className="medium material-icons orange-text text-lighten-1">
@@ -96,7 +93,6 @@ class Landing extends Component {
               view more in depth information.
             </p>
           </div>
-
           <img
             className="responsive-img"
             src="assets/images/workbench.png"
@@ -110,16 +106,15 @@ class Landing extends Component {
             <h5 className="left-align bottom-s-padding side-margin">
               We will help ensure your program is optimized:
             </h5>
-
             <p className="left-align p-text">
               Continuously monitor responses in your Dashboard.
             </p>
-            <div class="divider side-margin" />
+            <div className="divider side-margin" />
             <p className="left-align p-text">
               Evaluate the revelevance of existing survey programs. Remove and
               add new surveys as needed.
             </p>
-            <div class="divider side-margin" />
+            <div className="divider side-margin" />
             <p className="left-align p-text">
               Ensure your account is setup properly with our Email Program Setup
               package, available for new senders and OEM/Cloud Platform Partners
