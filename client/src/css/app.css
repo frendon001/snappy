@@ -131,6 +131,15 @@ video.responsive-video {
   height: 40vh;
 }
 
+.delete-button {
+  color: #7a7474;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  color: #d32f2f;
+}
+
 @media (min-width: 480px) {
   /* smartphones, Android phones, landscape iPhone */
   .col-background-img {
