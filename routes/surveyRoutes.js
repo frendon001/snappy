@@ -15,7 +15,7 @@ module.exports = app => {
     const surveys = await Survey.find({ _user: req.user.id }).select({
       recipients: false
     });
-    res.send(surveys);
+    res.status(200).send(surveys);
   });
 
   //response to survey taker after answering question
@@ -64,7 +64,7 @@ module.exports = app => {
       })
       .value();
 
-    res.send({});
+    res.status(200).send({});
   });
 
   //create surveys and send out emails
@@ -93,4 +93,26 @@ module.exports = app => {
       res.status(422).send(err);
     }
   });
+
+  //delete selected survey
+  app.delete(
+    '/api/surveys/:surveyId/:userId',
+    requireLogin,
+    async (req, res) => {
+      const { surveyId, userId } = req.params;
+      try {
+        const surveys = await Survey.deleteOne({
+          _id: surveyId,
+          _user: userId
+        }).exec();
+        console.log('SURVEYS', surveys);
+        if (surveys.n > 0) {
+          return res.status(204).send({});
+        }
+        return res.status(400).send({ Error: 'No changes made' });
+      } catch (error) {
+        return res.status(400).send(error);
+      }
+    }
+  );
 };
