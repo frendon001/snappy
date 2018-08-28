@@ -26,7 +26,6 @@ export const fetchSurveys = () => async dispatch => {
 
 export const deleteSurvey = (surveyId, userId) => async dispatch => {
   const res = await axios.delete(`/api/surveys/${surveyId}/${userId}`);
-  console.log(res);
   if (res.status === 204) {
     dispatch({ type: DELETE_SURVEY, payload: surveyId });
   }

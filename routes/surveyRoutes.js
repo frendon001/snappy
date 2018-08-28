@@ -105,7 +105,6 @@ module.exports = app => {
           _id: surveyId,
           _user: userId
         }).exec();
-        console.log('SURVEYS', surveys);
         if (surveys.n > 0) {
           return res.status(204).send({});
         }
