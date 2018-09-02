@@ -25,6 +25,7 @@ A web app that creates targeted email surveys. Quick and simple interface allows
 
 - HTML
 - CSS
+- JavaScript
 - Materialize CSS
 - Node
 - Heroku
@@ -34,6 +35,7 @@ A web app that creates targeted email surveys. Quick and simple interface allows
 - Redux
 - Stripe
 - Send Grid
+- OAuth 2.0 with Google
 
 ## Contributing
 
