@@ -10,7 +10,10 @@ require('./services/passport');
 
 mongoose.connect(
   keys.mongoURI,
-  { useNewUrlParser: true }
+  { 
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+   }
 );
 
 const app = express();
@@ -42,4 +45,8 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 const PORT = process.env.PORT || 5000;
+process.on('uncaughtException', function(err) {
+	console.log(err);
+	process.exit(1);
+});
 app.listen(PORT);
